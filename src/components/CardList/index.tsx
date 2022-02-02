@@ -2,6 +2,7 @@ import { SimpleGrid } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Card } from "../Card";
+import { TextInput } from "../Input/SearchInput";
 
 interface Data {
     id: number;
@@ -31,12 +32,15 @@ export function CardList() {
     }, []);
 
     return (
-        <SimpleGrid columns={[1, 2, 3]} spacing="40px">
-            {
-                infoCharacters.map((infoCharacter: Data) => (
-                    <Card key={String(infoCharacter.id)} id={infoCharacter.id} imgPath={`${infoCharacter.thumbnail.path}/portrait_incredible.jpg`} name={infoCharacter.name}/>
-                ))
-            }
-        </SimpleGrid>
+        <>
+            <TextInput />
+            <SimpleGrid columns={[1, 2, 3]} spacing="40px">
+                {
+                    infoCharacters.map((infoCharacter: Data) => (
+                        <Card key={String(infoCharacter.id)} id={infoCharacter.id} imgPath={`${infoCharacter.thumbnail.path}/portrait_incredible.jpg`} name={infoCharacter.name}/>
+                    ))
+                }
+            </SimpleGrid>
+        </>
     );
 }
