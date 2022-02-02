@@ -28,7 +28,7 @@ export const theme = extendTheme({
     },
     Button: {
       defaultProps: {
-        colorScheme: 'orange',
+        colorScheme: 'red',
       },
     },
   },
